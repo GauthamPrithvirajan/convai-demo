@@ -7,8 +7,45 @@
     <title>Vite + React</title>
     <script type="module" crossorigin src="./assets/index-Ul0gptL2.js"></script>
     <link rel="stylesheet" crossorigin href="./assets/index-BiLPwj0v.css">
+    <style>
+      #eventAgenda{
+        position: fixed;
+        right:24px;
+        bottom:24px;
+        box-sizing: border-box;
+        width:240px;
+        height:120px;
+        border-radius:32px;
+        background:rgba(255,255,255,0.8);
+        border:1px solid rgba(255,255,255,1.0);
+        display:flex;
+        flex-direction: row;
+        padding:12px;
+      }
+
+      #logo{
+        width:140px;
+        height:70px;
+        background-image: url(assets/CGI_logo.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+
+      #downloadButton{
+        width:160px;
+        height:48px;
+        border-radius:50%;
+        background:#5236ab;
+        color:#ffffff;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <div id="eventAgenda">
+      <div id="logo"></div>
+      <div id="downloadButton">Download Agenda</div>
+    </div>
   </body>
 </html>
