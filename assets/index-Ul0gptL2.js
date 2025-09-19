@@ -91281,8 +91281,7 @@ const logo = "./assets/ConvaiLogo-6rQw2oVK.png",
             width: "100%",
             display: "flex",
             flexDirection: "row",
-            gap: "24px",
-            justifyContent: "space-between",
+            justifyContent: "center",
           },
           children: [
             jsxRuntimeExports.jsxs("div", {
@@ -91290,9 +91289,7 @@ const logo = "./assets/ConvaiLogo-6rQw2oVK.png",
               style: {
                 color: "white",
                 width: "100%",
-                marginLeft: "20px",
-                marginTop: "5px",
-                fontSize: "13px",
+                fontSize: "16px",
               },
               children: [
                 iC &&
