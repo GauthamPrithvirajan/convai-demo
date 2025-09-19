@@ -18,12 +18,12 @@
       }
 
       #eventAgenda{
-        position:fixed;
-        top:12px;
-        right:16px;
+        position:absolute;
+        margin:12px auto;
         box-sizing: border-box;
         min-height:64px;
         min-width:320px;
+        width:100%;
         border-radius:12px;
         background:rgba(255,255,255,0.6);
         border:1px solid rgba(255,255,255,1.0);
@@ -73,12 +73,13 @@
     </style>
   </head>
   <body>
-    <div id="root"></div>
     <div id="eventAgenda">
       <div id="logo"></div>
       <div style="font-size: 24px;">APAC DC MIG LC FY2025</div>
       <div class="separator"></div>
       <a href="assets/MIGLeadershipConnect2025agenda.pdf" download><div id="downloadButton">Download Agenda</div></a>
     </div>
+    <div id="root"></div>
+    
   </body>
 </html>

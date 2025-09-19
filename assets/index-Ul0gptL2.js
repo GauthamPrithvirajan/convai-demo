@@ -91879,7 +91879,7 @@ const ChatHistory = (gC) => {
                     fontWeight: "bold",
                   },
                   children: jsxRuntimeExports.jsx("p", {
-                    style: { fontSize: "0.78vw" },
+                    style: { fontSize: "14px" },
                     children: "Reset Session",
                   }),
                 }),
