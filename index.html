@@ -67,6 +67,17 @@
         background: #aaaaaa;
       }
 
+      #micButton{
+        width:60px;
+        height:60px;
+        background:rgba(0,0,0,0.7);
+        border:1px solid #000000;
+        position: absolute;
+        left:12px;
+        bottom:27vh;
+        border-radius:50%;
+      }
+
       @media screen and (max-width: 626px) {
         .separator{
           display:none;
@@ -86,7 +97,38 @@
       <div class="separator"></div>
       <a href="assets/MIGLeadershipConnect2025agenda.pdf" download><div id="downloadButton">Download Agenda</div></a>
     </div>
+
+    <div id="micButton"></div>
     <div id="root"></div>
+    <script type="text/javascript">
+      const myDiv = document.getElementById('micButton');
+
+// Add a mousedown event listener to the div
+myDiv.addEventListener('mousedown', () => {
+    console.log('Mouse down on div!');
+
+    // Create a new KeyboardEvent for the 't' key
+    const keydownEvent = new KeyboardEvent('keydown', {
+        key: 't',
+        code: 'KeyT',
+        keyCode: 84, // Deprecated, but often included for compatibility
+        which: 84,   // Deprecated, but often included for compatibility
+        bubbles: true,
+        cancelable: true
+    });
+
+    // Dispatch the keydown event on the document body (or another target)
+    document.body.dispatchEvent(keydownEvent);
+    console.log('keydown event for "t" dispatched!');
+});
+
+// Optional: Add a keydown listener to see if the event was triggered
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 't') {
+        console.log('Key "t" was pressed (simulated)!');
+    }
+});
+    </script>
     
   </body>
 </html>
