@@ -8,6 +8,9 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+  position:fixed; bottom:0px; left:0px;
+  width:100vw;
+  height:40vh;
 }
 .container-chat {
   display: flex;
