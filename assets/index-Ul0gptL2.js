@@ -91843,7 +91843,7 @@ const ChatHistory = (gC) => {
               style: {
                 backgroundColor: IC ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.7)",
                 borderRadius: "10px",
-                width: "160px",
+                width: "140px",
                 height: "32px",
                 color: "white",
                 display: "flex",
