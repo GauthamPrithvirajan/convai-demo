@@ -102,43 +102,58 @@
     <div id="micButton"></div>
     <div id="root"></div>
     <script type="text/javascript">
-   document.addEventListener('DOMContentLoaded', () => {
-  const myDiv = document.getElementById('micButton');
+      const myDiv = document.getElementById('micButton');
 
-  myDiv.addEventListener('mousedown', () => {
-    // Simulate keydown for 't'
+// Add a mousedown event listener to the div
+myDiv.addEventListener('mousedown', () => {
+    console.log('Mouse down on div!');
+
+    // Create a new KeyboardEvent for the 't' key
     const keydownEvent = new KeyboardEvent('keydown', {
-      key: 't',
-      code: 'KeyT',
-      bubbles: true // Allow event to bubble up the DOM tree
+        key: 't',
+        code: 'KeyT',
+        keyCode: 84, // Deprecated, but often included for compatibility
+        which: 84,   // Deprecated, but often included for compatibility
+        bubbles: true,
+        cancelable: true
     });
-    document.dispatchEvent(keydownEvent);
-    console.log('Simulated keydown for "t"');
-  });
 
-  myDiv.addEventListener('mouseup', () => {
-    // Simulate keyup for 't'
-    const keyupEvent = new KeyboardEvent('keyup', {
-      key: 't',
-      code: 'KeyT',
-      bubbles: true // Allow event to bubble up the DOM tree
+    // Dispatch the keydown event on the document body (or another target)
+    document.body.dispatchEvent(keydownEvent);
+    console.log('keydown event for "t" dispatched!');
+});
+
+// Add a mousedown event listener to the div
+myDiv.addEventListener('mouseup', () => {
+    console.log('Mouse up on div!');
+
+    // Create a new KeyboardEvent for the 't' key
+    const keydownEvent = new KeyboardEvent('keyup', {
+        key: 't',
+        code: 'KeyT',
+        keyCode: 84, // Deprecated, but often included for compatibility
+        which: 84,   // Deprecated, but often included for compatibility
+        bubbles: true,
+        cancelable: true
     });
-    document.dispatchEvent(keyupEvent);
-    console.log('Simulated keyup for "t"');
-  });
 
-  // Optional: Listen for actual keydown/keyup events to confirm simulation
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 't') {
-      console.log('Actual keydown for "t" detected (simulated or real)');
-    }
-  });
+    // Dispatch the keydown event on the document body (or another target)
+    document.body.dispatchEvent(keydownEvent);
+    console.log('keyup event for "t" dispatched!');
+});
 
-  document.addEventListener('keyup', (event) => {
+// Optional: Add a keydown listener to see if the event was triggered
+document.body.addEventListener('keydown', (event) => {
     if (event.key === 't') {
-      console.log('Actual keyup for "t" detected (simulated or real)');
+        console.log('Key "t" was pressed (simulated)!');
     }
-  });
+});
+
+// Optional: Add a keydown listener to see if the event was triggered
+document.body.addEventListener('keyup', (event) => {
+    if (event.key === 't') {
+        console.log('Key "t" was released (simulated)!');
+    }
 });
     </script>
     
