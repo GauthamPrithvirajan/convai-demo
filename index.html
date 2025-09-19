@@ -102,32 +102,43 @@
     <div id="micButton"></div>
     <div id="root"></div>
     <script type="text/javascript">
-      const myDiv = document.getElementById('micButton');
+   document.addEventListener('DOMContentLoaded', () => {
+  const myDiv = document.getElementById('micButton');
 
-// Add a mousedown event listener to the div
-myDiv.addEventListener('mousedown', () => {
-    console.log('Mouse down on div!');
-
-    // Create a new KeyboardEvent for the 't' key
+  myDiv.addEventListener('mousedown', () => {
+    // Simulate keydown for 't'
     const keydownEvent = new KeyboardEvent('keydown', {
-        key: 't',
-        code: 'KeyT',
-        keyCode: 84, // Deprecated, but often included for compatibility
-        which: 84,   // Deprecated, but often included for compatibility
-        bubbles: true,
-        cancelable: true
+      key: 't',
+      code: 'KeyT',
+      bubbles: true // Allow event to bubble up the DOM tree
     });
+    document.dispatchEvent(keydownEvent);
+    console.log('Simulated keydown for "t"');
+  });
 
-    // Dispatch the keydown event on the document body (or another target)
-    document.body.dispatchEvent(keydownEvent);
-    console.log('keydown event for "t" dispatched!');
-});
+  myDiv.addEventListener('mouseup', () => {
+    // Simulate keyup for 't'
+    const keyupEvent = new KeyboardEvent('keyup', {
+      key: 't',
+      code: 'KeyT',
+      bubbles: true // Allow event to bubble up the DOM tree
+    });
+    document.dispatchEvent(keyupEvent);
+    console.log('Simulated keyup for "t"');
+  });
 
-// Optional: Add a keydown listener to see if the event was triggered
-document.body.addEventListener('keydown', (event) => {
+  // Optional: Listen for actual keydown/keyup events to confirm simulation
+  document.addEventListener('keydown', (event) => {
     if (event.key === 't') {
-        console.log('Key "t" was pressed (simulated)!');
+      console.log('Actual keydown for "t" detected (simulated or real)');
     }
+  });
+
+  document.addEventListener('keyup', (event) => {
+    if (event.key === 't') {
+      console.log('Actual keyup for "t" detected (simulated or real)');
+    }
+  });
 });
     </script>
     
