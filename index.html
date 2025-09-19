@@ -99,7 +99,7 @@
       <a href="assets/MIGLeadershipConnect2025agenda.pdf" download><div id="downloadButton">Download Agenda</div></a>
     </div>
 
-    <div id="micButton"></div>
+    <button id="micButton"></button>
     <div id="root"></div>
     <script type="text/javascript">
       const myDiv = document.getElementById('micButton');
@@ -128,7 +128,7 @@ myDiv.addEventListener('mouseup', () => {
     console.log('Mouse up on div!');
 
     // Create a new KeyboardEvent for the 't' key
-    const keydownEvent = new KeyboardEvent('keyup', {
+    const keyupEvent = new KeyboardEvent('keyup', {
         key: 't',
         code: 'KeyT',
         keyCode: 84, // Deprecated, but often included for compatibility
@@ -138,7 +138,45 @@ myDiv.addEventListener('mouseup', () => {
     });
 
     // Dispatch the keydown event on the document body (or another target)
-    document.body.dispatchEvent(keydownEvent);
+    document.body.dispatchEvent(keyupEvent);
+    console.log('keyup event for "t" dispatched!');
+});
+
+// Add a touchstart event listener to the div
+myDiv.addEventListener('touchstart', () => {
+    console.log('Mouse down on div!');
+
+    // Create a new KeyboardEvent for the 't' key
+    const touchstartEvent = new KeyboardEvent('touchstart', {
+        key: 't',
+        code: 'KeyT',
+        keyCode: 84, // Deprecated, but often included for compatibility
+        which: 84,   // Deprecated, but often included for compatibility
+        bubbles: true,
+        cancelable: true
+    });
+
+    // Dispatch the keydown event on the document body (or another target)
+    document.body.dispatchEvent(touchstartEvent);
+    console.log('touchstart event for "t" dispatched!');
+});
+
+// Add a touchend event listener to the div
+myDiv.addEventListener('moustouchendeup', () => {
+    console.log('Mouse up on div!');
+
+    // Create a new KeyboardEvent for the 't' key
+    const touchendEvent = new KeyboardEvent('touchend', {
+        key: 't',
+        code: 'KeyT',
+        keyCode: 84, // Deprecated, but often included for compatibility
+        which: 84,   // Deprecated, but often included for compatibility
+        bubbles: true,
+        cancelable: true
+    });
+
+    // Dispatch the keydown event on the document body (or another target)
+    document.body.dispatchEvent(touchendEvent);
     console.log('keyup event for "t" dispatched!');
 });
 
@@ -154,6 +192,28 @@ document.body.addEventListener('keyup', (event) => {
     if (event.key === 't') {
         console.log('Key "t" was released (simulated)!');
     }
+});
+
+
+
+// Optional: Add a touchstart listener to see if the event was triggered
+document.body.addEventListener('touchstart', (event) => {
+    if (event.key === 't') {
+        console.log('Key "t" was pressed (simulated)!');
+    }
+});
+
+// Optional: Add a touchend listener to see if the event was triggered
+document.body.addEventListener('touchend', (event) => {
+    if (event.key === 't') {
+        console.log('Key "t" was released (simulated)!');
+    }
+});
+
+
+document.getElementById('micButton').addEventListener('contextmenu', function(e) {
+    e.preventDefault(); // Prevents the default context menu from appearing
+    // You can add other actions here if needed, e.g., a custom long-press handler
 });
     </script>
     
