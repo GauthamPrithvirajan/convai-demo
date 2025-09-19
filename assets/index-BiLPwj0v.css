@@ -34,6 +34,7 @@ body {
 .placeholder1::placeholder {
   color: #fff;
   opacity: 1;
+  padding:0px 24px;
 }
 .placeholder2::placeholder {
   color: #dba842;
