@@ -105,8 +105,8 @@ span:nth-of-type(3) {
   animation-delay: -3.7s;
 }
 .ChatBubble {
-  position: absolute;
-  top: 1vh;
-  left: 1vw;
+  position: fixed;
+  bottom: 26vh;
+  right: 16px;
   z-index: 1;
 }

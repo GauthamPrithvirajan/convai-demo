@@ -55841,7 +55841,7 @@ var stats_min = { exports: {} };
       var eC = 0,
         iC = document.createElement("div");
       (iC.style.cssText =
-        "position:fixed;top:0;left:0;cursor:pointer;opacity:0.9;z-index:10000"),
+        "display:none;position:fixed;top:0;left:0;cursor:pointer;opacity:0.9;z-index:10000"),
         iC.addEventListener(
           "click",
           function (cC) {
@@ -91842,13 +91842,13 @@ const ChatHistory = (gC) => {
               style: {
                 backgroundColor: IC ? "rgba(0, 0, 0, 1)" : "rgba(0, 0, 0, 0.7)",
                 borderRadius: "10px",
-                width: "8vw",
-                height: "2.5vw",
+                width: "80px,
+                height: "32px",
                 color: "white",
                 display: "flex",
                 justifyContent: "center",
                 cursor: "pointer",
-                marginBottom: "10px",
+                //marginBottom: "10px",
               },
               onMouseEnter: () => CC(!0),
               onMouseLeave: () => CC(!1),
