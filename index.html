@@ -59,6 +59,7 @@
         align-content: center;
         align-items: center;
         padding:0px 6px;
+        
       }
 
       .separator{
@@ -77,6 +78,10 @@
         bottom:27vh;
         border-radius:50%;
         z-index:100;
+        background-image: url(assets/mic-svgrepo-com.svg);
+        background-position: center;
+        background-size: 32px 32px;
+        background-repeat: no-repeat;
       }
 
       @media screen and (max-width: 626px) {
@@ -86,7 +91,6 @@
 
         #eventAgenda{
           gap: 12px;
-          top:6px;
         }
       }
     </style>
@@ -124,6 +128,7 @@ myDiv.addEventListener('click', () => {
     document.body.dispatchEvent(keydownEvent);
     console.log('keydown event for "t" dispatched!');
     listen = 1;
+    myDiv.style.backgroundImage = "url('assets/mic-off-svgrepo-com.svg')";
   }else if(listen == 1){
 
     // Create a new KeyboardEvent for the 't' key
@@ -140,6 +145,7 @@ myDiv.addEventListener('click', () => {
     document.body.dispatchEvent(keyupEvent);
     console.log('keyup event for "t" dispatched!');
     listen=0;
+    myDiv.style.backgroundImage = "url('assets/mic-svgrepo-com.svg')";
   }
 });
 
