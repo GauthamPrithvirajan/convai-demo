@@ -91848,7 +91848,7 @@ const ChatHistory = (gC) => {
                 display: "flex",
                 justifyContent: "center",
                 cursor: "pointer",
-                //marginBottom: "10px",
+                marginBottom: "10px",
               },
               onMouseEnter: () => CC(!0),
               onMouseLeave: () => CC(!1),
